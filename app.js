@@ -1,21 +1,18 @@
 const express = require('express');
 const engine = require('consolidate');
-const app = express();
-const port = process.env.PORT || 3000;
-
-app.use(express.static('views'));
-app.engine('html', engine.mustache);
-app.set('view engine', 'html');
+const path = require('path');
+const app = express
+app.use(express.static(path.join(__dirname, 'views')));
 
 //MAIN ROUTES : 
 //Main Page
 app.get('/',(req ,res) => {
-    res.render('index');
+    res.sendFile('index');
 });
 
 //Test Route
 app.get('/test',(req ,res) => {
-    res.render('test');
+    res.sendFile('test.html');
 });
 
 //About
@@ -83,5 +80,7 @@ app.get('/btech/IIISem/py',(req ,res) => {
     res.render('py');
 }); 
 
+
 //Initialising Server
+const port = process.env.PORT || 3000;
 app.listen(port,() => console.log(`Listening on ${port}`));
