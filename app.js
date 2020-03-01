@@ -60,8 +60,20 @@ router.get('/btech/VIIISem',function(req,res){
 
 //3rd SEM ALL ROUTES :
 //Btech -- IIIsem -- ds
-router.get('/btech/IIISem',function(req,res){
-    res.sendFile(path.join(__dirname+'/views/threesem.html'));
+router.get('/btech/IIISem/ds',function(req,res){
+    res.sendFile(path.join(__dirname+'/views/ds.html'));
+});
+//Btech -- IIIsem -- oop
+router.get('/btech/IIISem/oop',function(req,res){
+    res.sendFile(path.join(__dirname+'/views/oop.html'));
+});
+//Btech -- IIIsem -- dbms
+router.get('/btech/IIISem/dbms',function(req,res){
+    res.sendFile(path.join(__dirname+'/views/dbms.html'));
+});
+//Btech -- IIIsem -- py
+router.get('/btech/IIISem/py',function(req,res){
+    res.sendFile(path.join(__dirname+'/views/py.html'));
 });
 
 
